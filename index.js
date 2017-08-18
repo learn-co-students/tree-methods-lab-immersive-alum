@@ -28,3 +28,11 @@ function findOrAdd(currentNode, newNode){
     }
   }
 }
+
+function min(currentNode){
+  if (currentNode.left){
+    return min(currentNode.left)
+  } else {
+    return currentNode
+  }
+}
