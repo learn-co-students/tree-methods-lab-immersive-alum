@@ -9,19 +9,19 @@ function inOrder(currentNode){
 }
 
 function findOrAdd(currentNode, newNode){
-  if (currentNode == newNode.data){
+  if(currentNode.data == newNode.data){
     return true
   }
-  if (newNode.data < currentNode.data){
-    if (currentNode.left){
+  if(newNode.data < currentNode.data){
+    if(currentNode.left){
       return findOrAdd(currentNode.left, newNode)
     } else {
       return currentNode.left = newNode
     }
   }
 
-  if (newNode.data > currentNode.data){
-    if (currentNode.right){
+  if(newNode.data > currentNode.data){
+    if(currentNode.right){
       return findOrAdd(currentNode.right, newNode)
     } else {
       return currentNode.right = newNode
@@ -32,6 +32,14 @@ function findOrAdd(currentNode, newNode){
 function min(currentNode){
   if (currentNode.left){
     return min(currentNode.left)
+  } else {
+    return currentNode
+  }
+}
+
+function max(currentNode){
+  if (currentNode.right){
+    return max(currentNode.right)
   } else {
     return currentNode
   }
