@@ -41,6 +41,15 @@ function max(node) {
   return maximum;
 }
 
+// Since the last right node is the biggest, you don't need to do any comparison.
+function max2(node) {
+  if (node.right) {
+    return max2(node.right);
+  } else {
+    return node;
+  }
+}
+
 function min(node) {
   let minimum = node;
   if (node.left) {
@@ -50,4 +59,12 @@ function min(node) {
     }
   }
   return minimum;
+}
+// since the last element of the tree is the smallest, you don't need to do any comparison, just return it.
+function min2(node) {
+  if (node.left) {
+    return min2(node.left);
+  } else {
+    return node;
+  }
 }
