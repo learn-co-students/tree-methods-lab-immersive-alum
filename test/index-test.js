@@ -12,11 +12,19 @@ afterEach(function() {
 
 describe('#inOrder', function() {
   it("prints out the data in the node from lowest to highest", function() {
-    let node = {data: 5, left:
-                      {data: 3, left: null, right: null},
-                        right: {data: 7, left: null,
-                        right: {data: 9, left: null, right: null}
-                      }}
+    let node = {
+      data: 5,
+        left: {data: 3, left: null, right: null},
+        right: {
+          data: 7,
+            left: null,
+            right: {
+              data: 9,
+                left: null,
+                right: null}
+              }
+            }
+
     inOrder(node)
     expect(console.log).toHaveBeenCalledWith(3)
     expect(console.log).toHaveBeenCalledWith(5)
